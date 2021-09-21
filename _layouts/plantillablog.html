@@ -9,28 +9,17 @@
   </head>
 
   <body>
-
-    <header>
-      {% include header.html %}
-    </header>
-
-    <nav>
-      {% include nav.html %}
-    </nav>
-
-    <aside>
-      {% include aside.html %}
-    </aside>
-
-    <section>
-      {{content}}
-    </section>
-
-    <footer>
-      {% include footer.html %}
-    </footer>
-
+		<h1>Listado de posts</h1>
+		
+		<ul>
+			(% for post in site.posts %)
+			<li>
+				<a href="{{site.baseurl}}{{post.url}}">{{post.title}} - {{post.date}}</a>
+				<p>{{post.content}}</p>
+			</li>
+			
+			{% endfor %}
+		</ul>    	
   </body>
 
 </html>
-
